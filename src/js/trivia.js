@@ -13,6 +13,7 @@ let tries = 0;
 let number1;
 let num1House;
 let btnId;
+let game = "trivia";
 
 getTriviaData();
 
@@ -31,7 +32,6 @@ async function getTriviaData() {
     displayQuestion();
 }
 
-
 function displayQuestion() {
     let x = randNum;
     number1 = charsWithHouses[x];
@@ -45,8 +45,10 @@ function displayQuestion() {
 const buttons = document.querySelectorAll(".btn");
 const buttonPressed = e => {
     btnId = e.target.id;
-    // console.log(btnId);
     const correct = checkAnswer(btnId, num1House);
+    if(tries == 10) {
+        endTriviaGame();
+    } else {
     if (correct) {
         e.target.style.backgroundColor = "#a7c957";
         tries+=1;
@@ -67,14 +69,22 @@ const buttonPressed = e => {
             e.target.style.backgroundColor = "";
         }, 1000)
     }
-
+    }
 }
+
 for(let button of buttons){
     button.addEventListener("click", buttonPressed);
 }
-
 
 function checkAnswer(num1House, btnId) {
     return btnId === num1House;
 }
 
+function endTriviaGame() {
+    let score = points;
+    let moves = tries;
+    setLocalStorage(score, moves, game);
+    setTimeout(()=> {
+        window.location.assign('../scores/index.html');
+    }, 1500);
+}
