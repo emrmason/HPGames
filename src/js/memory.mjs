@@ -1,10 +1,13 @@
+import { getLocalStorage, setLocalStorage } from "./partials";
+
 const baseURL = "https://hp-api.onrender.com/api/characters";
 const numCards = [];
 const selectedCharacters = [];
 let firstCard, secondCard;
 let matchesMade = 0;
 let moves = 0;
-let accuracy = matchesMade/moves;
+let score;
+let game = "matching";
 
 export async function getApiData() {
    while(numCards.length < 8){
@@ -35,7 +38,7 @@ function flipCard() {
          front.classList.toggle('flipped');
          let back = card.querySelector(".back");
          back.classList.toggle('flipped');
-      
+      if(matchesMade < 8){
          if (!firstCard) {
             firstCard = card;
          return;
@@ -44,6 +47,10 @@ function flipCard() {
          checkMatch(firstCard, secondCard);
          moves+=1;
          document.getElementById("moves").textContent = `Moves: ${moves}`;
+      } if(matchesMade == 8 ){
+         endGame();
+      }
+
          });
       });
    }
@@ -95,7 +102,7 @@ async function unflipCards(firstCard, secondCard) {
          let back2 = secondCard.querySelector(".back");
          back2.classList.toggle("flipped");
       resetCards();
-   }, 2000);
+   }, 1500);
 }
 
 function resetCards() {
@@ -104,12 +111,11 @@ function resetCards() {
    // console.log(firstCard, secondCard);
 }
 
-// function resetGame(matchesMade) {
-//    if(matchesMade == 8) {
-//       document.getElementById("winningPage").style("visibility = visible")
-//       document.getElementById("winningScript").textContent = `You finished the game with ${accuracy}% accuracy!<br>Would you like to start another round?`
-//       document.getElementById("playAgain").addEventListener("click", window.location.reload());
-//    } else {
-//       return
-//    }  
-// }
+function endGame() {
+   score = matchesMade;
+   setLocalStorage(score, moves, game);
+   // console.log(localStorage);
+   setTimeout(()=> {
+   window.location.assign('../scores/index.html');
+}, 1500);
+}

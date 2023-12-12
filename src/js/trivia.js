@@ -1,3 +1,5 @@
+import { getLocalStorage, setLocalStorage } from "./partials";
+
 const baseURL = "https://hp-api.onrender.com/api/characters";
 let char;
 let charsWithHouses = [];
