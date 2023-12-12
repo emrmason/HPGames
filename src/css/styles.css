@@ -1,0 +1,232 @@
+:root {
+--font-family-1: "Mountains of Christmas", serif;
+--font-family-2: "Laila", serif;
+
+--font-size-1: 50px;
+--font-size-2: 1.1em;
+
+--tekhelet: #3a3286ff; 
+--vista-blue: #a5a6f3ff; 
+--tangerine: #f18701ff; 
+--selective-yellow: #f7b801ff;
+}
+
+* {
+    text-align: center;
+    background-color: var(--tekhelet);
+    color:beige;
+    font-family: var(--font-family-2);
+    font-size: var(--font-size-2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+header {
+    max-height: 200px; 
+    max-width:inherit;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 10px; 
+}
+
+header img {
+    height: 100px;
+}
+
+header h1{
+    font-family: var(--font-family-1);
+    background-color: var(--tekhelet);
+    color: var(--selective-yellow);
+    font-size: var(--font-size-1);
+}
+
+h1 {
+    font-size: var(--font-size-1);
+}
+
+p {
+    background-color: var(--vista-blue);
+    color: black;
+    border-radius: 10px;
+}
+
+span {
+    background-color: var(--vista-blue);
+    color: black;
+    border-radius: 10px;
+}
+/* Styles for Memory game start here */
+.stats{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.stats div{
+    padding-left: 20px ;
+    padding-right: 20px;
+}
+
+.game-choice-grid li{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    list-style-type: none;
+    background-color: var(--vista-blue);
+    border-style: outset;
+    border: 2px solid var(--tangerine);
+    border-radius:5%
+}
+
+footer {
+    font-size: .8em;
+}
+
+.memory-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between; 
+    list-style-type: none;
+    margin: 0 auto;
+  }
+
+.card {
+    height: 150px;
+    width: 150px;
+    margin: 10px;  
+    border: 2px var(--tangerine) solid;
+    border-radius: 10px;
+    background-color: var(--vista-blue);
+    box-shadow: 0 3px 10px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.25s;
+}
+
+.front {
+    background-image: url(../images/vecteezy_harry-potter-quiddich-logo-in-cartoon-doodle-style-vector_22230280.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+} 
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    font-size:smaller;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+/* #winningPage{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--tangerine);
+    border-radius: 10px;
+    z-index: 10;
+    background-color: var(--vista-blue);
+    width: 400px;
+    max-width: 75%;
+    visibility: hidden;
+}
+
+#winningPage h2 {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#winningPage button {
+    padding: 10px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5), 
+} */
+
+
+/* Styles for House Trivia start here*/
+
+
+.answer-buttons {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.btn {
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    outline: none;
+}
+
+.btn:hover {
+    outline: var(--selective-yellow);
+}
+/* .correct {
+    background-color: #a7c957;
+    color: black;
+}
+
+.incorrect {
+    background-color: red;
+    color: white;
+} */
+
+#Gryffindor {
+    background-color: #bc1038;
+}
+
+#Ravenclaw {
+    background-color: #1344A4;
+}
+
+#Hufflepuff {
+    background-color: #ffd166;
+    color: black;
+}
+
+#Slytherin {
+    background-color: #048b67;
+}
+
+#btn5 {
+    background-color: var(--vista-blue);
+    color: black;
+}
