@@ -46,7 +46,7 @@ const buttons = document.querySelectorAll(".btn");
 const buttonPressed = e => {
     btnId = e.target.id;
     const correct = checkAnswer(btnId, num1House);
-    if(tries == 10) {
+    if(tries == 15) {
         endTriviaGame();
     } else {
     if (correct) {
@@ -64,10 +64,12 @@ const buttonPressed = e => {
         e.target.style.backgroundColor = "red";
         tries += 1;
         document.getElementById("tries").textContent = `Tries: ${tries}`;
-        window.alert("Try again!");
         setTimeout(()=>{
             e.target.style.backgroundColor = "";
-        }, 1000)
+            window.alert(`Correct answer: ${num1House}`);
+            randNum = Math.floor(Math.random() * 135);
+            displayQuestion();
+        }, 1200)
     }
     }
 }

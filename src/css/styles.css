@@ -86,8 +86,12 @@ span {
     list-style-type: none;
     background-color: var(--vista-blue);
     border-style: outset;
-    border: 2px solid var(--tangerine);
+    border: 5px solid var(--tangerine);
     border-radius:5%
+}
+a {
+    background-color: var(--vista-blue);
+    color: black;
 }
 
 footer {
@@ -143,51 +147,50 @@ footer {
     transform: rotateY(180deg);
 }
 
-/* #winningPage{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid var(--tangerine);
-    border-radius: 10px;
-    z-index: 10;
+/* Scores Styles*/
+#score-keeping {
     background-color: var(--vista-blue);
-    width: 400px;
-    max-width: 75%;
-    visibility: hidden;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid var(--tangerine);
 }
 
-#winningPage h2 {
-    padding: 10px;
+#score-stats ul {
+    list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
 }
-
-#winningPage button {
+#score-stats li {
+    background-color: var(--vista-blue);
+    color: black;
+    border: 2px solid var(--tangerine);
+    border-radius: 10px;
     padding: 10px;
 }
 
-#overlay {
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5), 
-} */
-
+.play-again {
+    background-color: var(--selective-yellow);
+    border: 2px solid var(--tangerine);
+    border-radius: 10px;
+}
+.play-again h2 {
+    background-color: var(--selective-yellow);
+    color: var(--tekhelet);
+}
 
 /* Styles for House Trivia start here*/
-
-
-.answer-buttons {
-    margin: 50px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+.alert {
+    display: none;
+    height: 100px;
+    background-color: red;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px; 
 }
+
 
 .btn {
     width: 200px;
@@ -197,17 +200,9 @@ footer {
 }
 
 .btn:hover {
-    outline: var(--selective-yellow);
-}
-/* .correct {
-    background-color: #a7c957;
-    color: black;
+    border: 8px solid var(--selective-yellow);
 }
 
-.incorrect {
-    background-color: red;
-    color: white;
-} */
 
 #Gryffindor {
     background-color: #bc1038;
@@ -224,9 +219,4 @@ footer {
 
 #Slytherin {
     background-color: #048b67;
-}
-
-#btn5 {
-    background-color: var(--vista-blue);
-    color: black;
 }
