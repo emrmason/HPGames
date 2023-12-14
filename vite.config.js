@@ -10,6 +10,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         memory: resolve(__dirname, "src/memory/index.html"),
         trivia: resolve(__dirname, "src/trivia/index.html"),
+        scores: resolve(__dirname, "src/scores/index.html")
       },
     },
   },

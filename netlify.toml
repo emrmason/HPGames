@@ -1,9 +1,2 @@
 [build]
     command = "npm run build"
-[[redirects]]
-
-from = "/*"
-
-to = "scores/index.html"
-
-status = 200
