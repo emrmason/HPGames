@@ -4,6 +4,6 @@
 
 from = "/*"
 
-to = "./scores/index.html"
+to = "../scores/index.html"
 
 status = 200
