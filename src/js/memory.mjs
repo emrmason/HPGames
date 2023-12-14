@@ -116,6 +116,6 @@ function endGame() {
    setLocalStorage(score, moves, game);
    // console.log(localStorage);
    setTimeout(()=> {
-   window.location.assign('../scores/index.html');
+   window.location.assign('./scores/index.html');
 }, 1500);
 }
